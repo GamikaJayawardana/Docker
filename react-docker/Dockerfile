@@ -46,3 +46,10 @@ EXPOSE 5173
 CMD npm run dev
 
 #docker build -t react-docker .
+
+#docker run -p 5173:5173 react-docker 
+# The -p flag maps the port 5173 of the container to the port 5173 of the host machine
+
+#docker run -p 5173:5173 -v "$(pwd):/app" -v /app/node_modules react-docker
+# The -v flag mounts the current directory to the /app directory in the container
+# This allows us to see the changes in the app without rebuilding the image
